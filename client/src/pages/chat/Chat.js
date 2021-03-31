@@ -14,10 +14,11 @@ let socket;
 
 const Chat = () => {
   const [appState, updateState] = React.useContext(CTX);
-
+  
   if (appState.userId) {
+    console.log("Test");
     socket = io(
-      `http://localhost:8000?profilePicUrl=${appState.profilePicUrl}&name=${appState.name}&userId=${appState.userId}`
+      `http://206.189.132.159:8000?profilePicUrl=${appState.profilePicUrl}&name=${appState.name}&userId=${appState.userId}`
     );
     socket.emit('updateAndSendOnlineUsers');
   }
